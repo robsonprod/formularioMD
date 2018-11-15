@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Inscrição</title>
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<link type="text/css" rel="stylesheet" href="lib/materialize/dist/css/materialize.min.css"  media="screen,projection"/>
+	<link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body class="">
+
+	<div class="container">
+	    <h1 class="text-form">Formulario de inscrição</h1>
+		<form class="form-horizontal" action="inscricao.php" method="post">
+
+			<div class="row">
+				<div class="input-field col s6">
+					<input id="nome" type="text" class="validate" name="nome" required>
+					<label for="nome">Nome</label>
+				</div>
+				<div class="input-field col s6">
+					<input id="email" type="email" class="validate" name="email" required>
+					<label for="email" data-error="email invalido!" data-success="ok">Email</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s6">
+					<input id="rg" type="number" class="validate" name="rg" required>
+					<label for="rg">RG</label>
+				</div>
+				<div class="input-field col s6">
+					<input id="cpf" type="text" class="validate" name="cpf"  maxlength="14" required>
+					<label for="cpf">CPF</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s6">
+					<select name="sexo" required class="validate">
+						<option value="" disabled selected>Selecione</option>
+						<option value="M">Masculino</option>
+						<option value="F">Feminino</option>
+					</select>
+					<label>Sexo</label>
+				</div>
+				<div class="input-field col s6">
+					<input id="cidade" type="text" class="validate" name="cidade" required>
+					<label for="cidade">Cidade</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s6">
+					<input id="idade" type="text" class="validate" name="idade" required>
+					<label for="idade">Idade</label>
+				</div>
+				<div class="input-field col s6">
+					<select id="modalidade" name="modalidade" required class="validate">
+						<option value="" disabled selected>Selecione</option>
+						<option value="Estudante">Estudante</option>
+						<option value="Professor">Professor</option>
+						<option value="Visitante">Visitante</option>
+					</select>
+					<label>Modalidade</label>
+				</div>
+			</div>
+			<!-- caso seja estudante ou professor-->
+			<div class="modalidade hide">
+				<div class="row">
+					<div class="input-field col s6">
+						<input id="icon_prefix" type="text" class="validate" name="instituicao">
+						<label for="icon_prefix">Instituição</label>
+					</div>
+					<div class="input-field col s6">
+						<select name="nivel_escolar">
+							<option value="" disabled selected>Selecione</option>
+							<option value="Fundamental">Fundamental</option>
+							<option value="Médio">Médio</option>
+							<option value="Superior">Superior</option>
+						</select>
+						<label>Nivel</label>
+					</div>
+				</div>
+			</div>
+			<!-- caso seja visitante -->
+			<div class="visitante hide">
+				<div class="row">
+					<div class="input-field col s8 offset-s2">
+						<input id="icon_prefix" type="text" class="validate" name="ocupacao">
+						<label for="icon_prefix">Ocupação/Profissão</label>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="input-field col s4 offset-s2">
+					<p class="condicao2">Irá competir na OBR?</p>
+				</div>
+				<div class="input-field col s4">
+					<input type="checkbox" id="sim1"/>
+					<label for="sim1">Sim</label>
+				</div>
+			</div>
+			<!-- se sim -->
+			<div class="obb hide">
+				<div class="row">
+					<div class="input-field col s6">
+						<input id="icon_prefix" type="text" class="validate" name="equipe">
+						<label for="icon_prefix">Nome da equipe</label>
+					</div>
+					<div class="input-field col s6">
+						<select name="nivel_competidor">
+							<option value="" disabled selected>Selecione</option>
+							<option value="1">Nivel 1</option>
+							<option value="2">Nivel 2</option>
+						</select>
+						<label>Nivel</label>
+					</div>
+				</div>
+			</div>
+
+			<!-- participou de caravana? -->
+			<div class="row">
+				<div class="input-field col s4 offset-s2">
+					<p class="condicao3">Participou de alguma caravana?</p>
+				</div>
+				<div class="input-field col s4">
+					<input type="checkbox" id="sim2"/>
+					<label for="sim2">Sim</label>
+				</div>
+			</div>
+			<div class="caravana hide">
+				<div class="row">
+					<div class="input-field col s8 offset-s2">
+						<select name="caravana">
+							<option value="" disabled selected>Selecione</option>
+							<option value="Sesi Teresina">Sesi Teresina</option>
+							<option value="Labiras">Labiras</option>
+							<option value="Diocesano Teresina">Diocesano Teresina</option>
+							<option value="Picos">Picos</option>
+							<option value="Piripiri">Piripiri</option>
+							<option value="Campo Maior">Campo Maior</option>
+							<option value="Cocal da Estação">Cocal da Estação</option>
+							<option value="Floriano">Floriano</option>
+							<option value="Esperantina">Esperantina</option>
+							<option value="Objetivo Teresina">Objetivo Teresina</option>
+						</select>
+						<label>Caravana</label>
+					</div>
+				</div>
+			</div>
+			<div class="grid-block">
+				<button type="submit" class="waves-effect waves-light btn z-depth-3 #388e3c green darken-2">Enviar</button>
+			</div>
+		</form>
+	</div>
+
+
+	<script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="lib/materialize/dist/js/materialize.min.js"></script>
+	<script type="text/javascript" src="lib/inputmask.js"></script>
+	<script type="text/javascript" src="lib/inputmask.extensions.js"></script>
+	<script type="text/javascript" src="lib/jquery.inputmask.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('select').material_select();
+
+			$('#modalidade').on('change', function(event) {
+				event.preventDefault();
+				var selected = $("option:selected", this);
+				if(selected.val() == 'Estudante' || selected.val() == 'Professor'){
+					$('.modalidade').removeClass('hide');
+					$('.visitante').addClass('hide');
+				}else{
+					$('.modalidade').addClass('hide');
+					$('.visitante').removeClass('hide');
+				}
+			});
+
+			$('#sim1').on('change', function(event) {
+				event.preventDefault();
+				if($(this).prop('checked')){
+					$('.obb').removeClass('hide');
+				}else{
+					$('.obb').addClass('hide');
+				}
+			});
+
+			$('#sim2').on('change', function(event) {
+				event.preventDefault();
+				if($(this).prop('checked')){
+					$('.caravana').removeClass('hide');
+				}else{
+					$('.caravana').addClass('hide');
+				}
+			});
+			$('#cpf').inputmask("999.999.999-99");
+			
+		});
+
+	</script>
+</body>
+</html>

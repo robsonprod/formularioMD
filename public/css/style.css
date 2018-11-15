@@ -1,0 +1,22 @@
+
+.container{
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+.grid-block{
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	padding: 10px;
+}
+.grid-block button{
+	display: flex;
+}
+.text-form{
+	font-size: 30px;
+	text-align: center;
+	font-weight: lighter;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 15px;
+}
